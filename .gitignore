@@ -33,6 +33,6 @@ build/
 .vscode/
 
 # Maven Wrapper
-.mvn/wrapper/
+.mvn
 mvnw
 mvnw.cmd

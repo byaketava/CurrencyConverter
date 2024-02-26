@@ -2,14 +2,14 @@ package com.byak.currencyconverter.controller;
 
 import com.byak.currencyconverter.model.CurrencyConverterResponse;
 import com.byak.currencyconverter.service.CurrencyConverterService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/convert")
 public class CurrencyConverterController {
 
-    @Autowired
     private  CurrencyConverterService currencyConverterService;
 
     @GetMapping("/{fromCurrency}/{toCurrency}/{amount}")

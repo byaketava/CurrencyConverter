@@ -16,6 +16,11 @@ public class CurrencyConverterService {
         String url = API_URL + "?api_key=" + apiKey + "&from=" + fromCurrency
                 + "&to=" + toCurrency + "&amount=" + amount + "&format=json";
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(url, CurrencyConverterResponse.class);
+
+        CurrencyConverterResponse response = restTemplate.getForObject(url, CurrencyConverterResponse.class);
+        if (response == null) {
+            throw new RuntimeException("Failed to convert currency. API response is null.");
+        }
+        return response;
     }
 }
